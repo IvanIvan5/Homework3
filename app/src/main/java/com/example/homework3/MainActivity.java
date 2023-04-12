@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-package com.example.homework1;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,30 +18,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Гардероб
-        float coat = 70;
-        byte coatDiscount = 45;
-        float hat = 25;
-        byte hatDiscount = 37;
-        //Счет
-        double account = 100;
+        float Adulttickets = 9;
+        float Childrentickets = 11;
+        float Oldpeopletickets = 5;
+        float account = 0;
 
-        //Сумма всех товаров
-        double sumAll= (coat-(coat * coatDiscount/100)) + (hat -(hat * hatDiscount/100));
+
+        account = 70*Adulttickets+ (70-(70/100*50))*Childrentickets + (70-(70/100*30))*Oldpeopletickets;
 
         //Вывод результатов
-        TextView resultTextView = findViewById(R.id.resultTextView);
-        if (account>=sumAll) resultTextView.setText("Имеющихся средств для покупки делового гардероба достаточно");
-        else resultTextView.setText("Денег недостаточно");
-        TextView coatTextView = findViewById(R.id.coat);
-        coatTextView.setText(" Стоимость пальто " + coat + " монет ");
-        TextView coatDiscountTextView = findViewById(R.id.coatDiscount);
-        coatDiscountTextView.setText(" Скидка на пальто " + coatDiscount );
-        TextView  hatTextView = findViewById(R.id. hat);
-        hatTextView.setText(" Стоимость шляпы " + hat + " монет ");
-        TextView hatDiscountTextView = findViewById(R.id.hatDiscount);
-        hatDiscountTextView.setText(" Скидка на шляпу " + hatDiscount);
+        TextView AdultticketsTextView = findViewById(R.id.Adulttickets);
+        AdultticketsTextView.setText(Adulttickets + " Билетов для взрослых ");
+        TextView ChildrenticketsTextView = findViewById(R.id.Childrentickets);
+        ChildrenticketsTextView.setText(Childrentickets + " Детских билетов " );
+        TextView  OldpeopleticketsTextView = findViewById(R.id. Oldpeopletickets);
+        OldpeopleticketsTextView.setText(Oldpeopletickets + " Билетов для пожилых  ");
         TextView accountTextView = findViewById(R.id.account);
-        accountTextView.setText(" Ваш баланс составляет " + account + " монет ");
+        accountTextView.setText("Стоимость всех билетов составляет" + account + "монет");
     }
 }
